@@ -4,7 +4,9 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public class Main {
+
     public static void main(String[] args) {
+
         String input;
         Scanner scanner = new Scanner(System.in);
 
@@ -29,7 +31,7 @@ public class Main {
                 input = scanner.nextLine();
 
                 if (input.equals(name)) {
-                    System.out.println("Привет, Вячеслав!");
+                    System.out.println("Привет, " + name + "!");
                 } else {
                     System.out.println("Нет такого имени");
                 }
