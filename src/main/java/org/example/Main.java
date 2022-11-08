@@ -4,27 +4,29 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public class Main {
-
     public static void main(String[] args) {
         String input;
-
         Scanner scanner = new Scanner(System.in);
+
         int menuItem = inputProcessing("Введите номер задания для проверки:\n" + "1. Первое задание\n" +
                 "2. Второе задание\n" + "3. Третье задание");
 
         switch (menuItem) {
             case 1:
                 // Task 1
-                String firstTaskResult = (inputProcessing("Чтобы поздороваться, введите число больше 7-ми:") > 7)
+                String messageForFirstTask = "Чтобы поздороваться, введите число больше 7-ми:";
+
+                String firstTaskResult = (inputProcessing(messageForFirstTask) > 7)
                         ? "Привет!" : "Вы ввели число меньше 7-ми";
                 System.out.println(firstTaskResult);
                 break;
 
             case 2:
                 // Task 2
+                String name = "Вячеслав";
+
                 System.out.println("Введите Ваше имя:");
                 input = scanner.nextLine();
-                String name = "Вячеслав";
 
                 if (input.equals(name)) {
                     System.out.println("Привет, Вячеслав!");
@@ -51,13 +53,19 @@ public class Main {
                     }
                 }
                 break;
+
+            default:
+                System.out.println("Нет такого задания!");
+                break;
         }
     }
 
     // Метод обработки ввода
     public static int inputProcessing(String message) {
+
         Scanner scanner = new Scanner(System.in);
         int processedInput;
+
         while (true) {
             System.out.println(message);
             String input = scanner.nextLine();
@@ -68,6 +76,7 @@ public class Main {
                 System.out.println("Вы ввели не число!");
             }
         }
+
         return processedInput;
     }
 }
